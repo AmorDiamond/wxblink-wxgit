@@ -1,0 +1,10 @@
+<view class="container">
+  <view class="head-container">
+    <w-epsoide index="{{classicData.index}}" />
+    <w-like class="like" bind:like="likeHandle" like="{{classicData.like_status}}" count="{{classicData.fav_nums}}" />
+  </view>
+  <w-movie hidden="{{classicData.type !== 100}}" img="{{classicData.image}}" content="{{classicData.content}}" />
+  <w-music wx:if="{{classicData.type === 200}}" img="{{classicData.image}}" content="{{classicData.content}}" src="{{classicData.url}}" />
+  <w-essay wx:if="{{classicData.type === 300}}" img="{{classicData.image}}" content="{{classicData.content}}" />
+  <w-navi class="navi" title="{{classicData.title}}" latest="{{latest}}" first="{{first}}" bind:leftHandle="leftHandle" bind:rightHandle="rightHandle" />
+</view>

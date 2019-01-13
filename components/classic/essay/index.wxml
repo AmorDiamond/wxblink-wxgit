@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="img-con">
+    <image class="big-img" src="{{img}}" />
+    <image class="tag-img" src="images/essay@tag.png" />
+  </view>
+  <text class="content">{{content}}</text>
+</view>

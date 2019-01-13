@@ -1,0 +1,30 @@
+.epsoide-container{
+  display: flex;
+  align-items: baseline;
+}
+.no{
+  font-size: 32rpx
+}
+.index{
+  position: relative;
+  font-size: 60rpx;
+  line-height: 60rpx;
+  font-weight: 800;
+  margin-right: 20rpx;
+}
+.index::after{
+  content: '';
+  position: absolute;
+  border-right: 1rpx solid #000;
+  top: 8rpx;
+  bottom: 8rpx;
+  margin-left: 8rpx;
+}
+.date-con{
+  font-size: 24rpx;
+  align-self: center;
+  text-align: center;
+}
+.year{
+  font-size: 20rpx;
+}

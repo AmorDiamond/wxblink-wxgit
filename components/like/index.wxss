@@ -1,0 +1,16 @@
+.container{
+  display: inline-block;
+}
+.container image{
+  width: 32rpx;
+  height: 28rpx;
+}
+.container text{
+  /* font-family: 'PingFangSC-Thin'; */
+  position: relative;
+  top: -15rpx;
+  font-size: 14px;
+  line-height: 0;
+  margin-left: 4rpx;
+  color: #bbb;
+}

@@ -1,0 +1,8 @@
+<view class='music-container'>
+  <view class='music-control'>
+    <image class='music-bg {{playing ? "active": "" }}' src='{{img}}' />
+    <image class='play-btn' src='{{playing?pauseImg:playImg}}' bind:tap='onPlay' />
+    <image class='music-tag' src='./images/music@tag.png' />
+  </view>
+  <view class='text'>{{content}}</view>
+</view>

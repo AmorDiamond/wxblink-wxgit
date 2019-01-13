@@ -1,0 +1,5 @@
+<view class="navi-container">
+  <image class="left-arrow" src="{{latest?leftDisArrow:leftArrow}}" bind:tap="leftHandle" />
+  <text class="text">{{title}}</text>
+  <image class="right-arrow" src="{{first?rightDisArrow:rightArrow}}" bind:tap="rightHandle" />
+</view>

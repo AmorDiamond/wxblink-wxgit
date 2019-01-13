@@ -1,0 +1,13 @@
+<view class="container">
+  <view class="book-head">
+    <view class="search"><image src="/images/icon/search.png" /><text>搜索书籍</text></view>
+  </view>
+  <view class="book-list">
+    <view class="head-img">
+      <image src="/images/book/quality.png" />
+    </view>
+    <view class="book-container">
+      <w-book class="book-item" wx:for="{{bookList}}" wx:key="{{item.id}}" book="{{item}}" />
+    </view>
+  </view>
+</view>

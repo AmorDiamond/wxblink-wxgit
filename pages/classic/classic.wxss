@@ -1,0 +1,19 @@
+.head-container{
+  display: flex;
+  width: 100%;
+  padding: 0 20rpx;
+  height: 100rpx;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  border-top: 1rpx solid #f5f5f5;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+.like{
+  margin-top: 10rpx;
+}
+.navi{
+  position: absolute;
+  width: 100%;
+  bottom: 40rpx;
+}

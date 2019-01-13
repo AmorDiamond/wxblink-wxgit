@@ -1,0 +1,17 @@
+.navi-container{
+  display: flex;
+  width: 80%;
+  height: 80rpx;
+  margin: auto;
+  background: #f7f7f7;
+  border-radius: 4rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+.navi-container image{
+  height: 80rpx;
+  width: 80rpx;
+}
+.navi-container .text{
+  font-size: 28rpx;
+}

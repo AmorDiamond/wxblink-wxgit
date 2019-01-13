@@ -1,0 +1,8 @@
+<view class="epsoide-container">
+  <view class="no">No.</view>
+  <view class="index">{{_index}}</view>
+  <view class="date-con">
+    <view class="month">{{month}}</view>
+    <view class="year">{{year}}</view>
+  </view>
+</view>

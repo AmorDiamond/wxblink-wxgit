@@ -1,0 +1,41 @@
+.book-container{
+  margin-top: 30rpx;
+  position: relative;
+  box-shadow: 2px 2px 3px #e3e3e3;
+  width: 240rpx;
+  height: 360rpx;
+}
+.book-container image{
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+.book-container .book-desc{
+  position: absolute;
+  width:100%;
+  bottom: 0;
+  background: #fff;
+  font-size: 20rpx;
+  padding: 5rpx 10rpx 8rpx 15rpx;
+  border-radius: 0 0 2px 2px;
+  box-sizing: border-box;
+}
+.book-desc text{
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.book-container .title{
+  margin-top: 10rpx;
+  font-size: 24rpx;
+}
+.book-container .count{
+  color: #666;
+  text-align: right;
+}
+.book-container .author{
+  color: #999;
+  margin-bottom: 10rpx;
+  font-size: 20rpx;
+}
