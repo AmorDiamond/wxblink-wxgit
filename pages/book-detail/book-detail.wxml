@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="book-info">
+    <image class="book-img" src="{{book.image}}" />
+    <text class="book-title">{{book.title}}</text>
+    <text class="book-author" wx:for="{{book.author}}" wx:key="author">{{item}}</text>
+  </view>
+  <view class="sub-container comments">
+    <view class="title">短评</view>
+    <w-tag class="item" wx:for="{{comments}}" wx:key="content" content="{{item.content}}"><text class="comment-nums" slot="after">{{'+' + item.nums}}</text></w-tag>
+  </view>
+  <view class="sub-container">
+    <view class="title">内容简介</view>
+    <view class=" book-desc">{{book.summary}}</view>
+  </view>
+  <view class="sub-container book-other">
+    <view class="title">书本信息</view>
+    书本信息
+  </view>
+  <view class="book-ft">底部</view>
+</view>

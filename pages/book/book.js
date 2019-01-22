@@ -19,6 +19,12 @@ Page({
       })
     })
   },
+  onTapBook (event) {
+    const bid = event.currentTarget.dataset.bid
+    wx.navigateTo({
+      url: '/pages/book-detail/book-detail?bid=' + bid,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

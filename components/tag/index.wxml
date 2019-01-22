@@ -1,0 +1,5 @@
+<view class="container">
+  <text>{{content}}</text>
+  <slot name="after"></slot>
+  <!--使用插槽实现更灵活的tag-->
+</view>
