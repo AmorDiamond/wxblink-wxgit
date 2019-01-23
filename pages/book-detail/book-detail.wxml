@@ -1,20 +1,67 @@
+<wxs src="../../utils/filter.wxs" module="utils"></wxs>
 <view class="container">
   <view class="book-info">
     <image class="book-img" src="{{book.image}}" />
     <text class="book-title">{{book.title}}</text>
     <text class="book-author" wx:for="{{book.author}}" wx:key="author">{{item}}</text>
   </view>
-  <view class="sub-container comments">
-    <view class="title">短评</view>
-    <w-tag class="item" wx:for="{{comments}}" wx:key="content" content="{{item.content}}"><text class="comment-nums" slot="after">{{'+' + item.nums}}</text></w-tag>
-  </view>
   <view class="sub-container">
+    <view class="title">短评</view>
+    <view class="no-data-tips" wx:if="{{!comments.length}}">暂无短评</view>
+    <view class="comments" wx:else>
+      <w-tag class="item" wx:for="{{utils.limiter(comments, 15)}}" wx:key="content" content="{{item.content}}"><text class="comment-nums" slot="after">{{'+' + item.nums}}</text></w-tag>
+    </view>
+  </view>
+  <view class="sub-container book-desc">
     <view class="title">内容简介</view>
-    <view class=" book-desc">{{book.summary}}</view>
+    <text class="content" decode="{{true}}">{{utils.formatText(book.summary)}}</text>
   </view>
   <view class="sub-container book-other">
     <view class="title">书本信息</view>
-    书本信息
+    <view class="content">
+      <view class="desc">
+        <text>出版社</text>
+        <text>出版年</text>
+        <text>页数</text>
+        <text>定价</text>
+        <text>装帧</text>
+      </view>
+      <view>
+        <view>{{book.publisher}}</view>
+        <view>{{book.pubdate}}</view>
+        <view>{{book.pages}}</view>
+        <view>{{book.price}}</view>
+        <view>{{book.binding}}</view>
+      </view>
+      <!--<view><text class="desc">出版社</text><text>{{book.publisher}}</text></view>
+      <view><text class="desc">出版年</text><text>{{book.pubdate}}</text></view>
+      <view><text class="desc">页数</text><text>{{book.pages}}</text></view>
+      <view><text class="desc">定价</text><text>{{book.price}}</text></view>
+      <view><text class="desc">装帧</text><text>{{book.binding}}</text></view>-->
+    </view>
   </view>
-  <view class="book-ft">底部</view>
 </view>
+<view class="book-ft" wx:if="{{!showMask}}">
+  <view class="input" bindtap="inputHandle">输入短评</view>
+  <view class="like"><w-like like="{{likeStatus}}" count="{{likeCount}}" bind:like="likeHandle" /></view>
+  <view class="share">分享</view>
+</view>
+<view class="comment-panel" wx:if="{{showMask}}">
+  <view class="comment-hd">
+    <text wx:if="{{comments.length}}">点击标签仅可+1</text>
+    <text wx:else>暂无短评</text>
+    <view class="cancel" bindtap="closeCommentPanel">取消</view>
+  </view>
+  <view class="comment-list comments">
+    <w-tag class="item"
+           wx:for="{{utils.limiter(comments, 3)}}"
+           wx:key="content"
+           content="{{item.content}}"
+           data-content="{{item.content}}"
+           bindtap="commentTagInput">
+      <text class="comment-nums" slot="after">{{'+' + item.nums}}</text>
+    </w-tag>
+  </view>
+  <input type="text" cursor-spacing="40rpx" focus="{{showMask ? true : false}}" bindconfirm="commentInputDone" placeholder="短评最多12个字" />
+</view>
+<view class="mask-cover" bindtap="closeCommentPanel" wx:if="{{showMask}}"></view>

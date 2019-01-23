@@ -21,6 +21,16 @@ class book extends HTTP {
       url: `/book/${bid}/short_comment`
     })
   }
+  addComment (bid, content) {
+    return this.request({
+      url: `/book/add/short_comment`,
+      method: 'post',
+      data: {
+        book_id: bid,
+        content: content
+      }
+    })
+  }
 }
 
 export { book }

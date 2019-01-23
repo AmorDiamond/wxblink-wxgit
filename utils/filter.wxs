@@ -1,0 +1,20 @@
+// 小程序需要在wxml里使用方法，如{{handleFn(option)}}处理数据，只能通过定义wxs文件，然后再wxml里引入来实现，wxs可以直接在wxml里书写
+// https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/
+var formatText = function (text) {
+  // 使用正则处理请求内容里的\n
+  // https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/06datatype.html
+  if (!text) {
+    return
+  }
+  var reg = getRegExp('\\\\n', 'g');
+  return text.replace(reg, '\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+}
+
+var limiter = function (arr, length) {
+  return arr.slice(0, length)
+}
+// wxs不支持es6语法，支持es5语法类似的语法
+module.exports = {
+  formatText: formatText,
+  limiter: limiter
+}
