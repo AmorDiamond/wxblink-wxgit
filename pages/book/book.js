@@ -6,7 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bookList: []
+    bookList: [],
+    searching: false,
+    more: false,
+    lock: false,
   },
 
   /**
@@ -25,53 +28,31 @@ Page({
       url: '/pages/book-detail/book-detail?bid=' + bid,
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  onTapSearch () {
+    this.setData({
+      searching: true
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  onSearchCancel (event) {
+    this.setData({
+      searching: false
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  loadMoreEnd () {
+    this.setData({
+      lock: false
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onReachBottom () {
+    if (this.data.lock) {
+      return
+    }
+    this.setData({
+      lock: true,
+      more: !this.data.more // 控制more变化，search组件的properties才能触发observer
+    })
   }
 })

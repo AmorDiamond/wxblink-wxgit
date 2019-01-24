@@ -1,0 +1,31 @@
+<wxs src="../../utils/filter.wxs" module="utils" />
+<view class="container">
+  <view class="search-hd">
+    <view class="search-con">
+      <icon class="search-icon" type="search" size="15" />
+      <input type="text" placeholder="书籍名" focus="{{true}}" value="{{name}}" bindconfirm="searchHandle" />
+      <icon bindtap="clearInput" class="clear-icon" type="clear" size="15" />
+    </view>
+    <text class="cancel" bindtap="onCancel">取消</text>
+  </view>
+  <blank wx:if="{{bookList == false}}">
+    <view class="sub-container">
+      <view class="title">历史搜索</view>
+      <view class="no-data-tips" wx:if="{{history == false}}">无历史记录</view>
+      <view class="list" wx:else>
+        <w-tag class="item" wx:for="{{history}}" wx:key="item" content="{{item}}" data-content="{{item}}" bindtap="searchHandle" />
+      </view>
+    </view>
+    <view class="sub-container">
+      <view class="title">热门搜索</view>
+      <view class="no-data-tips" wx:if="{{hotWords == false}}">暂无信息</view>
+      <view class="list" wx:else>
+        <w-tag class="item" wx:for="{{utils.limiter(hotWords, 15)}}" wx:key="item" content="{{item}}" data-content="{{item}}" bindtap="searchHandle" />
+      </view>
+    </view>
+  </blank>
+</view>
+
+<view class="book-list" wx:if="{{bookList.length}}">
+  <w-book class="book-item" wx:for="{{bookList}}" wx:key="id" data-bid="{{item.id}}" bind:tap="onTapBook" book="{{item}}" />
+</view>

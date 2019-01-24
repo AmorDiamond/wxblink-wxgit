@@ -1,6 +1,6 @@
-<view class="container">
+<view class="container" hidden="{{searching}}">
   <view class="book-head">
-    <view class="search"><image src="/images/icon/search.png" /><text>搜索书籍</text></view>
+    <view class="search" bindtap="onTapSearch"><image src="/images/icon/search.png" /><text>搜索书籍</text></view>
   </view>
   <view class="book-list">
     <view class="head-img">
@@ -11,3 +11,4 @@
     </view>
   </view>
 </view>
+<w-search more="{{more}}" wx:if="{{searching}}" bindloadend="loadMoreEnd" bindcancel="onSearchCancel" />

@@ -31,6 +31,15 @@ class book extends HTTP {
       }
     })
   }
+  getBookList (start, q) {
+    return this.request({
+      url: '/book/search?summary=1',
+      data: {
+        start,
+        q
+      }
+    })
+  }
 }
 
 export { book }
