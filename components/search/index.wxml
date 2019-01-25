@@ -8,7 +8,7 @@
     </view>
     <text class="cancel" bindtap="onCancel">取消</text>
   </view>
-  <blank wx:if="{{bookList == false}}">
+  <blank wx:if="{{!searching}}">
     <view class="sub-container">
       <view class="title">历史搜索</view>
       <view class="no-data-tips" wx:if="{{history == false}}">无历史记录</view>
@@ -26,6 +26,8 @@
   </blank>
 </view>
 
-<view class="book-list" wx:if="{{bookList.length}}">
-  <w-book class="book-item" wx:for="{{bookList}}" wx:key="id" data-bid="{{item.id}}" bind:tap="onTapBook" book="{{item}}" />
+<view class="book-list" wx:if="{{searching}}">
+  <w-book class="book-item" wx:for="{{bookList}}" wx:key="id" data-bid="{{item.id}}" bind:tap="onTapBook" book="{{item}}" like="{{false}}" />
 </view>
+<view class="loading-con {{loadingCenter? 'loading-center' : ''}}" wx:if="{{loading || loadingCenter}}"><view class="loading-icon"></view></view>
+<view class="no-data-tips" wx:if="{{noResultData}}">没有搜索到书籍</view>

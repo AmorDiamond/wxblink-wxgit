@@ -11,4 +11,4 @@
     </view>
   </view>
 </view>
-<w-search more="{{more}}" wx:if="{{searching}}" bindloadend="loadMoreEnd" bindcancel="onSearchCancel" />
+<w-search more="{{more}}" wx:if="{{searching}}" bindcancel="onSearchCancel" />

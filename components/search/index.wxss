@@ -80,3 +80,34 @@
 .book-item{
   margin-top: 10rpx;
 }
+.loading-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loading-icon{
+  width: 50rpx;
+  height: 50rpx;
+  background-color: #aaa;
+  border-radius: 50%;
+  margin: 40rpx auto;
+  animation: scaleAnimation .6s infinite alternate;
+}
+.no-data-tips{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+@keyframes scaleAnimation {
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(1.4);
+  }
+}
