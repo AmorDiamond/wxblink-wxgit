@@ -1,1 +1,69 @@
-/* pages/my/my.wxss */
+.container{
+  background: #f5f5f5;
+}
+.my-hd{
+  position: relative;
+  background: #fff;
+  box-shadow: 0 2px 10px #e3e3e3;
+}
+.my-bg{
+  width: 750rpx;
+  height: 573rpx;
+}
+.study{
+  position: absolute;
+  top: 40rpx;
+  right: 40rpx;
+  width: 88rpx;
+  height: 88rpx;
+}
+.tag-con{
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100rpx;
+  bottom: 30rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+.about-bg{
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  margin: auto;
+  margin-top: 10rpx;
+}
+.user{
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.avatar{
+  display: block;
+  width: 140rpx;
+  height: 140rpx;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto;
+}
+.name{
+  font-size: 36rpx;
+}
+.tag-con{
+  font-size: 32rpx;
+  color: #666;
+}
+.tag-con .about-bg, .tag-con .like-num{
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+  color: #333;
+}
+.like-title{
+  display: block;
+  width: 97rpx;
+  height: 42rpx;
+  margin: 40rpx auto;
+}

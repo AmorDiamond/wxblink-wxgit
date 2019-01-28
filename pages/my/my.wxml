@@ -1,2 +1,25 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="container">
+  <view class="my-hd">
+    <image class="my-bg" src="../../images/my/my@bg.png" />
+    <image class="study" src="../../images/my/study.png" />
+    <view class="user">
+      <open-data type="userAvatarUrl" class="avatar"></open-data>
+      <open-data type="userNickName" class="name"></open-data>
+    </view>
+    <view class="tag-con">
+      <view class="about">
+        <image class="about-bg" src="../../images/my/about.png" />
+        <text>关于我们</text>
+      </view>
+      <view class="like">
+        <view class="like-num">101</view>
+        <text>喜欢的书</text>
+      </view>
+    </view>
+  </view>
+  <view class="like-container">
+    <image class="like-title" src="../../images/my/like.png" />
+    <view class="list">
+    </view>
+  </view>
+</view>

@@ -40,8 +40,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "book-list",
-					"pathName": "pages/book/book",
+					"name": "my",
+					"pathName": "pages/my/my",
 					"query": "",
 					"scene": null
 				}
